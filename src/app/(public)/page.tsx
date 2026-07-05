@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useStore } from '@/store/useStore';
-import { ArrowRight, ShieldCheck, Cpu, Zap, Layers, Network, Clock } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Cpu, Zap, Layers, Network } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Dynamically import 3D coin to prevent Next.js SSR build errors
@@ -18,75 +18,13 @@ const ThreeCoin = dynamic(() => import('@/components/ThreeCoin'), {
 });
 
 export default function HomePage() {
-  const { tokenStats, activePresaleRound, blogPosts, cmsConfig, fetchUserProfile, walletAddress, isConnected } = useStore();
+  const { tokenStats, activePresaleRound, blogPosts, cmsConfig, fetchUserProfile, walletAddress } = useStore();
 
   useEffect(() => {
     if (walletAddress) {
       fetchUserProfile(walletAddress);
     }
   }, [walletAddress, fetchUserProfile]);
-
-  // Chat state for Dexscreener Live Chat
-  const [chatMessages, setChatMessages] = React.useState<Array<{ username: string; message: string; timestamp: string }>>([
-    { username: "crypto_analyst", message: "Emissions schedule is fully capped. Volume is picking up.", timestamp: "12:04" },
-    { username: "gpu_provider", message: "Staked 5,000 VSN. Validator node yields are solid.", timestamp: "12:05" },
-    { username: "node_operator", message: "ZK execution proofs verify in under 10ms. Efficient consensus.", timestamp: "12:07" },
-    { username: "seed_buyer", message: "Presale price is very competitive compared to Web2 cloud monopolies.", timestamp: "12:08" },
-  ]);
-  const [userChatMessage, setUserChatMessage] = React.useState("");
-
-  // Auto-scroll chat box to bottom
-  React.useEffect(() => {
-    const box = document.getElementById('dex-chat-box');
-    if (box) {
-      box.scrollTop = box.scrollHeight;
-    }
-  }, [chatMessages]);
-
-  // Auto add new chat messages over time
-  React.useEffect(() => {
-    const mockUsernames = ["whale_watcher", "vsn_staker", "render_creator", "alpha_hunter", "validator_9", "zk_expert"];
-    const mockPhrases = [
-      "Escrow contract guarantees token vesting schedule unlocks.",
-      "The 5% referral commission is credited immediately upon block signature.",
-      "VISION GPU pooling charges $0.02 per TFLOPS-hour. AWS is $0.25.",
-      "Locked positions for 365 days. High confidence in this protocol.",
-      "Just completed a $1,200 purchase in BNB. Confirmed smoothly.",
-      "Decentralized storage layer captures 10% of transaction fees.",
-      "Staking pools are emitting rewards continuously. Yield counter looks nice.",
-      "Is anyone running a validator node? Minimum spec is high-performance CPU."
-    ];
-
-    const interval = setInterval(() => {
-      const randomUser = mockUsernames[Math.floor(Math.random() * mockUsernames.length)];
-      const randomPhrase = mockPhrases[Math.floor(Math.random() * mockPhrases.length)];
-      const now = new Date();
-      const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-      
-      setChatMessages(prev => [
-        ...prev.slice(-15),
-        { username: randomUser, message: randomPhrase, timestamp: timeStr }
-      ]);
-    }, 8000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleSendChatMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!userChatMessage.trim()) return;
-    
-    const now = new Date();
-    const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-    const newMsg = {
-      username: isConnected && walletAddress ? `${walletAddress.substring(0, 6)}...${walletAddress.substring(38)}` : "anonymous_user",
-      message: userChatMessage,
-      timestamp: timeStr
-    };
-    
-    setChatMessages(prev => [...prev, newMsg]);
-    setUserChatMessage("");
-  };
 
   const defaultHeroTitle = "Powering the Future Through Decentralized Vision";
   const defaultHeroSubtitle = "We are building the first trustless zk-rendering consensus protocol on the Solana blockchain. Run a node, secure the network, and claim visual computation rewards.";
@@ -270,70 +208,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. DEXSCREENER LIVE TERMINAL */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-        <div className="flex items-center gap-2">
-          <Clock className="w-5 h-5 text-vision-cyan" />
-          <h3 className="text-xl font-bold text-white uppercase tracking-wider">Dexscreener Live Terminal (PIPPIN / SOL)</h3>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Chart Component (7 Columns) */}
-          <div className="lg:col-span-7 border glass-panel border-white/10 rounded-2xl bg-black/40 h-[400px] overflow-hidden">
-            <iframe 
-              src="https://dexscreener.com/solana/8wwcnqdzjcy5pt7akhupafknv2txca9sq6ybkgzlbvdt?embed=1&theme=dark&trades=0&info=0"
-              className="w-full h-full border-0"
-              title="Pippin Dexscreener Chart"
-            />
-          </div>
-          
-          {/* Chat Component (5 Columns) */}
-          <div className="lg:col-span-5 p-6 border glass-panel border-white/10 rounded-2xl bg-black/40 h-[400px] flex flex-col justify-between">
-            <div className="border-b border-white/5 pb-3">
-              <span className="text-xs text-gray-500 font-bold uppercase tracking-wider">Live Chat Room</span>
-              <h4 className="text-sm font-bold text-white">DEXscreener Chat: PIPPIN/SOL</h4>
-            </div>
-            
-            {/* Scrollable messages box */}
-            <div id="dex-chat-box" className="flex-1 overflow-y-auto py-3 space-y-3 pr-2 scroll-smooth text-xs">
-              {chatMessages.map((msg, index) => (
-                <div key={index} className="space-y-0.5">
-                  <div className="flex justify-between items-center text-[10px]">
-                    <span className="font-bold text-vision-cyan font-mono">@{msg.username}</span>
-                    <span className="text-gray-600 font-mono">{msg.timestamp}</span>
-                  </div>
-                  <p className="text-gray-300 leading-normal bg-white/[0.02] border border-white/5 p-2 rounded-xl">
-                    {msg.message}
-                  </p>
-                </div>
-              ))}
-            </div>
-            
-            {/* User Input Bar */}
-            <form onSubmit={handleSendChatMessage} className="border-t border-white/5 pt-3 flex gap-2">
-              <input
-                type="text"
-                value={userChatMessage}
-                onChange={(e) => setUserChatMessage(e.target.value)}
-                placeholder={isConnected ? "Send message..." : "Connect wallet to write..."}
-                disabled={!isConnected}
-                className="flex-1 px-3 py-2 text-xs rounded-lg bg-black/60 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-vision-cyan disabled:opacity-50"
-              />
-              <button
-                type="submit"
-                disabled={!isConnected}
-                className="px-4 py-2 bg-gradient-vision text-black font-bold text-xs rounded-lg hover:opacity-90 transition-all active:scale-95 disabled:opacity-50 disabled:active:scale-100"
-              >
-                Send
-              </button>
-            </form>
-          </div>
-          
-        </div>
-      </section>
-
-      {/* 6. TOKENOMICS ALLOCATION PREVIEW */}
+      {/* 5. TOKENOMICS ALLOCATION PREVIEW */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <span className="text-xs font-bold text-vision-cyan uppercase tracking-wider">Token Distribution</span>
@@ -373,7 +248,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. ROADMAP TEASER */}
+      {/* 6. ROADMAP TEASER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <div className="max-w-2xl mx-auto space-y-3">
           <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
@@ -430,7 +305,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. LATEST NEWS */}
+      {/* 7. LATEST NEWS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">

@@ -1,0 +1,225 @@
+{
+  "tokenStats": {
+    "priceUsd": 0.085,
+    "marketCapUsd": 8501000,
+    "circulatingSupply": 100011764.71,
+    "totalSupply": 500000000,
+    "burnedSupply": 12500000,
+    "holders": 1476,
+    "stakingApy": 0.12,
+    "updatedAt": "2026-07-04T18:20:00.000Z"
+  },
+  "presaleRounds": [
+    {
+      "id": "1",
+      "name": "Seed Round",
+      "priceUsd": 0.05,
+      "hardCapUsd": 1000000,
+      "softCapUsd": 250000,
+      "raisedUsd": 1000000,
+      "status": "closed",
+      "startsAt": "2026-05-01T00:00:00Z",
+      "endsAt": "2026-05-31T23:59:59Z"
+    },
+    {
+      "id": "2",
+      "name": "Public Presale Round",
+      "priceUsd": 0.085,
+      "hardCapUsd": 3000000,
+      "softCapUsd": 750000,
+      "raisedUsd": 1655820,
+      "status": "active",
+      "startsAt": "2026-06-01T00:00:00Z",
+      "endsAt": "2026-08-31T23:59:59Z"
+    },
+    {
+      "id": "3",
+      "name": "Final Public Round",
+      "priceUsd": 0.12,
+      "hardCapUsd": 5000000,
+      "softCapUsd": 1500000,
+      "raisedUsd": 0,
+      "status": "upcoming",
+      "startsAt": "2026-09-01T00:00:00Z",
+      "endsAt": "2026-10-31T23:59:59Z"
+    }
+  ],
+  "stakingPlans": [
+    {
+      "id": "plan-1",
+      "name": "Flexible Light",
+      "lockDays": 30,
+      "apy": 0.08,
+      "minStakeVision": 100
+    },
+    {
+      "id": "plan-2",
+      "name": "Medium Vault",
+      "lockDays": 90,
+      "apy": 0.12,
+      "minStakeVision": 500
+    },
+    {
+      "id": "plan-3",
+      "name": "High-Yield Lock",
+      "lockDays": 180,
+      "apy": 0.18,
+      "minStakeVision": 1000
+    },
+    {
+      "id": "plan-4",
+      "name": "Genesis Stake",
+      "lockDays": 365,
+      "apy": 0.25,
+      "minStakeVision": 5000
+    }
+  ],
+  "users": [
+    {
+      "id": "u-1",
+      "walletAddress": "0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5",
+      "email": "demo@vision.coin",
+      "kycStatus": "approved",
+      "visionBalance": 15000,
+      "totalPurchasedUsd": 1275,
+      "referralCode": "VSN-DEMO",
+      "referredBy": null,
+      "createdAt": "2026-06-15T12:00:00Z"
+    },
+    {
+      "id": "u-2",
+      "walletAddress": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+      "email": "investor1@vision.coin",
+      "kycStatus": "pending",
+      "visionBalance": 11764.71,
+      "totalPurchasedUsd": 1000,
+      "referralCode": "VSN-INV1",
+      "referredBy": "VSN-DEMO",
+      "createdAt": "2026-07-01T08:30:00Z"
+    },
+    {
+      "id": "u-3",
+      "walletAddress": "0x281059546162b1C9CCD69749C47c59b6fA0C0a4B",
+      "email": "crypto_builder@gmail.com",
+      "kycStatus": "not_started",
+      "visionBalance": 50000,
+      "totalPurchasedUsd": 4250,
+      "referralCode": "VSN-BLDR",
+      "referredBy": null,
+      "createdAt": "2026-06-20T14:45:00Z"
+    },
+    {
+      "id": "u-3hg7q7al4",
+      "walletAddress": "SolFlareCCD69749C47c59b6fA0C0a4B5f6d8976F",
+      "kycStatus": "not_started",
+      "visionBalance": 0,
+      "totalPurchasedUsd": 0,
+      "referralCode": "VSN-1PQVF",
+      "referredBy": null,
+      "createdAt": "2026-07-04T20:39:57.769Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1",
+      "userId": "u-1",
+      "type": "purchase",
+      "amountVision": 15000,
+      "amountUsd": 1275,
+      "status": "completed",
+      "txHashMock": "0xMOCK-7ae94bf12a9bc475510682fa0be2162a",
+      "createdAt": "2026-06-15T12:05:00Z"
+    },
+    {
+      "id": "tx-2",
+      "userId": "u-3",
+      "type": "purchase",
+      "amountVision": 50000,
+      "amountUsd": 4250,
+      "status": "completed",
+      "txHashMock": "0xMOCK-bb82c16182c16198f8b89895c1c8a14b",
+      "createdAt": "2026-06-20T14:50:00Z"
+    },
+    {
+      "id": "tx-carttw50t",
+      "userId": "u-2",
+      "type": "purchase",
+      "amountVision": 11764.71,
+      "amountUsd": 1000,
+      "status": "completed",
+      "txHashMock": "0xMOCK-02195a5e63a1ba6d",
+      "createdAt": "2026-07-04T14:23:13.056Z"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "post-1",
+      "slug": "vision-network-architecture-deep-dive",
+      "title": "VISION Network Architecture Deep Dive",
+      "excerpt": "An in-depth technical analysis of the VISION decentralized layer, our proof-of-vision consensus, and node architecture.",
+      "body": "## Introduction to VISION\n\nVISION is building a decentralized consensus network that integrates physical and digital imaging pipelines directly with blockchain execution layers. Through our custom Proof-of-Vision (PoV) consensus mechanism, we utilize verifiable zero-knowledge proofs to validate computational rendering streams.\n\n### The Problem\n\nModern decentralized visualization systems are bottle-necked by network throughput and GPU virtualization overhead. High-fidelity rendering nodes cannot trust other nodes to perform complex tasks without complete re-evaluation, leading to 2x or 3x energy waste.\n\n### The VISION Solution\n\nBy packaging rendering jobs inside zk-SNARK constraints, nodes can verify computational correctness in under 10 milliseconds. This enables real-time visual streaming with trustless validation.\n\n```\n+------------------+     Render Job     +-------------------+\n|  Requester Node  | -----------------> |   Provider Node   |\n+------------------+                    +-------------------+\n         ^                                        |\n         |                                        | Generates Frame\n         | Verify zk-Proof                        v & zk-Proof\n+-----------------------------------------------------------+\n|                    VISION L1 Consensus                    |\n+-----------------------------------------------------------+\n```\n\n### Tokenomics Integration\n\nVISION tokens directly fuel render gas fees, rewards for proof creation, and staking parameters required to register node hardware on the network. Stakers benefit from a share of network fees combined with initial block rewards.",
+      "category": "Technology",
+      "author": "Dr. Sarah Chen, CTO",
+      "publishedAt": "2026-06-10T10:00:00Z"
+    },
+    {
+      "id": "post-2",
+      "slug": "staking-vaults-launch-rewards",
+      "title": "Staking Vaults Launch: Powering the Network",
+      "excerpt": "We are proud to announce the official launch of the VISION staking vaults. Lock tokens to secure the consensus layer and earn up to 25% APY.",
+      "body": "## Staking Is Now Live\n\nAs we approach our testnet release, we are opening the VISION Staking Vaults. Staking is a vital pillar of the VISION network, ensuring that nodes deposit collateral before taking rendering contracts.\n\n### Staking Parameters\n\nTo accommodate all investors, we are introducing four lockup plans:\n\n*   **Flexible Light:** 30 days lock, 8% APY. Perfect for dynamic asset allocators.\n*   **Medium Vault:** 90 days lock, 12% APY. The standard node-bonding tier.\n*   **High-Yield Lock:** 180 days lock, 18% APY. Designed for institutional validators.\n*   **Genesis Stake:** 365 days lock, 25% APY. Exclusive multiplier tier for our earliest backers.\n\n### How APY is Paid\n\nAPY is paid out from our allocation rewards reserve and compiled daily. In our dashboard, users can track their yield accruing in real-time. Yield can be claimed at any point directly back into the user's connected wallet.",
+      "category": "Staking",
+      "author": "Marcus Vane, Head of DeFi",
+      "publishedAt": "2026-06-25T14:00:00Z"
+    },
+    {
+      "id": "post-3",
+      "slug": "presale-milestone-round-2-active",
+      "title": "Presale Milestone: $1.6M Raised in Round 2",
+      "excerpt": "Our Public Presale Round has crossed $1.6M raised. We are on track to hit our soft cap and advance to the next development milestones.",
+      "body": "## Community Strength\n\nWe are excited to share that the VISION Public Presale Round has successfully raised over $1.6 million USD, fueled by thousands of global participants.\n\n### Capital Allocation\n\nAll funds raised during the presale are locked in multisig custody and earmarked for specific development phases:\n\n1.  **Core Protocol Engineering (45%):** Finalizing the PoV consensus and expanding node client support for AMD and NVIDIA GPUs.\n2.  **SDK & Developer Tools (25%):** Building native libraries for Unreal Engine 5 and Unity.\n3.  **Security Audits (15%):** Engaging top tier companies to audit our core codebase.\n4.  **Liquidity Pools (15%):** Reserved for initial DEX listings at launch.\n\n### What's Next\n\nThe current round is open at the entry price of $0.085 USD per VISION. Once our hard cap of $3.0M is met, the price will increment to $0.12 USD in the final round.",
+      "category": "Presale",
+      "author": "Arthur Pendelton, CEO",
+      "publishedAt": "2026-07-02T09:15:00Z"
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-1",
+      "category": "Presale",
+      "question": "How do I buy VISION during the presale?",
+      "answer": "You can buy VISION using USDT, ETH, or BNB. Connect your Web3 wallet (MetaMask, Coinbase Wallet, etc.) on our Presale page, select your purchase currency, enter the amount, and confirm the transaction. The tokens will be credited immediately to your mock balance."
+    },
+    {
+      "id": "faq-2",
+      "category": "Wallet",
+      "question": "Which wallets are supported?",
+      "answer": "For this demo platform, you can connect any simulated wallet address. In a live environment, we support all major EVM compatible wallets including MetaMask, Coinbase Wallet, Rainbow, and WalletConnect."
+    },
+    {
+      "id": "faq-3",
+      "category": "Staking",
+      "question": "How long are my tokens locked when staking?",
+      "answer": "Lock periods vary depending on the plan you choose. We offer 30 days, 90 days, 180 days, and 365 days vaults. During the lock period, you cannot withdraw the principal, but you can claim your earned rewards at any time."
+    },
+    {
+      "id": "faq-4",
+      "category": "KYC",
+      "question": "Is KYC verification mandatory?",
+      "answer": "Yes, to comply with global regulations, users must pass KYC verification before claiming tokens or participating in staking vaults. You can check your KYC status and submit details in the user profile menu."
+    },
+    {
+      "id": "faq-5",
+      "category": "Security",
+      "question": "Are the smart contracts audited?",
+      "answer": "Yes, our mock smart contracts are logically modeled after audited ERC-20 and staking protocols. In our production pipeline, the actual contracts will undergo audits by CertiK and Hacken prior to Mainnet launch."
+    }
+  ],
+  "cms": {
+    "homeHeroTitle": "Powering the Future Through Decentralized Vision",
+    "homeHeroSubtitle": "We are building the first trustless zk-rendering consensus protocol. Run a node, secure the network, and claim visual computation rewards.",
+    "aboutMission": "Our mission is to democratize high-performance rendering. By combining cryptographic proofs with distributed GPU clusters, we enable creators to render at 1/10th the cost of legacy cloud systems."
+  },
+  "newsletter": [],
+  "contact": []
+}

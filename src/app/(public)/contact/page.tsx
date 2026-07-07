@@ -235,8 +235,8 @@ export default function ContactAndFaqPage() {
               <Twitter className="w-4 h-4" />
               <span>Twitter</span>
             </a>
-            <a href="#" className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-vision-cyan transition-colors">
-              <Compass className="w-4 h-4" />
+            <a href="https://t.me/Vision_57" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-vision-cyan transition-colors">
+              <Send className="w-4 h-4" />
               <span>Telegram</span>
             </a>
             <a href="#" className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-vision-cyan transition-colors">

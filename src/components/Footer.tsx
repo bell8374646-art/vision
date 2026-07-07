@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useStore } from '@/store/useStore';
-import { Mail, ArrowRight, ShieldCheck, Github, Twitter } from 'lucide-react';
+import { Mail, ArrowRight, ShieldCheck, Github, Twitter, Send } from 'lucide-react';
 
 export default function Footer() {
   const submitNewsletter = useStore((state) => state.submitNewsletter);
@@ -47,10 +47,13 @@ export default function Footer() {
               Powering the Future Through Decentralized Vision. The first trustless zk-rendering consensus protocol.
             </p>
             <div className="flex gap-3 text-gray-400">
-              <a href="#" className="hover:text-vision-cyan transition-colors">
+              <a href="#" className="hover:text-vision-cyan transition-colors" title="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-vision-cyan transition-colors">
+              <a href="https://t.me/Vision_57" target="_blank" rel="noopener noreferrer" className="hover:text-vision-cyan transition-colors" title="Telegram">
+                <Send className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-vision-cyan transition-colors" title="GitHub">
                 <Github className="w-5 h-5" />
               </a>
             </div>

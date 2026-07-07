@@ -47,7 +47,7 @@ export default function Footer() {
               Powering the Future Through Decentralized Vision. The first trustless zk-rendering consensus protocol.
             </p>
             <div className="flex gap-3 text-gray-400">
-              <a href="#" className="hover:text-vision-cyan transition-colors" title="Twitter">
+              <a href="https://x.com/visioncoin0" target="_blank" rel="noopener noreferrer" className="hover:text-vision-cyan transition-colors" title="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
               <a href="https://t.me/Vision_57" target="_blank" rel="noopener noreferrer" className="hover:text-vision-cyan transition-colors" title="Telegram">

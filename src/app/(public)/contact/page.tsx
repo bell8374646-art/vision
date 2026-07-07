@@ -231,7 +231,7 @@ export default function ContactAndFaqPage() {
           
           {/* Social connections */}
           <div className="p-4 border glass-panel border-white/10 rounded-2xl bg-white/[0.01] flex items-center justify-around">
-            <a href="#" className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-vision-cyan transition-colors">
+            <a href="https://x.com/visioncoin0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-vision-cyan transition-colors">
               <Twitter className="w-4 h-4" />
               <span>Twitter</span>
             </a>

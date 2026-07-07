@@ -7,16 +7,6 @@ import { useStore } from '@/store/useStore';
 import { ArrowRight, ShieldCheck, Cpu, Zap, Layers, Network } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Dynamically import 3D coin to prevent Next.js SSR build errors
-const ThreeCoin = dynamic(() => import('@/components/ThreeCoin'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[400px] flex items-center justify-center">
-      <div className="w-16 h-16 rounded-full border-4 border-vision-cyan/20 border-t-vision-cyan animate-spin" />
-    </div>
-  )
-});
-
 export default function HomePage() {
   const { tokenStats, activePresaleRound, blogPosts, cmsConfig, fetchUserProfile, walletAddress } = useStore();
 
@@ -113,13 +103,23 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Right Column: 3D Canvas */}
+            {/* Right Column: AI Video Stream */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              className="relative w-full aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-vision-cyan/5 bg-black/40 glass-panel"
             >
-              <ThreeCoin />
+              <video
+                src="https://labs.google/fx/api/og-video/shared/313adcf3-0b77-46e6-8c17-c6fe93207d92"
+                poster="https://labs.google/fx/api/og-video/thumbnail/shared/313adcf3-0b77-46e6-8c17-c6fe93207d92"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
           </div>
